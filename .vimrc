@@ -17,6 +17,8 @@ Plugin 'tomtom/tcomment_vim'
 Plugin 'dyng/ctrlsf.vim'
 
 Plugin 'rking/ag.vim'
+
+Plugin 'bling/vim-airline'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -92,14 +94,14 @@ set tm=500
 set laststatus=2
 
 " Format the status line
-set statusline=\ %{HasPaste()}%F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ \ \ Line:\ %l
+"set statusline=\ %{HasPaste()}%F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ \ \ Line:\ %l
 
 " returns true if paste mode is enabled
 function! HasPaste()
     if &paste
         return 'PASTE MODE  '
-    en 
-    return '' 
+    en
+    return ''
 endfunction
 
 "copy to the osx clipboard

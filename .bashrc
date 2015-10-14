@@ -54,6 +54,9 @@ alias vis='vim "+set si"'
 alias edit='vim'
 alias v='vim'
 
+# count the number of files in the current directory
+alias count='find . -type f | wc -l'
+
 # Saturn 4 ssh #
 alias s4dhpark='ssh -p 2222 dhpark@saturn4.cldi.io'
 
