@@ -57,16 +57,6 @@ alias v='vim'
 # count the number of files in the current directory
 alias count='find . -type f | wc -l'
 
-# Saturn 4 ssh #
-alias s4dhpark='ssh -p 2222 dhpark@saturn4.cldi.io'
-
-# Saturn 0 ssh #
-alias s0dhpark='ssh -p 2222 dhpark@saturn0.cldi.io'
-
-# CS61B ssh #
-alias cs61b_cory='ssh cs61b-am@cory.eecs.berkeley.edu'
-alias cs61b_ashby='ssh cs61b-am@ashby.cs.berkeley.edu'
-
 # confirmation #
 alias mv='mv -i'
 alias cp='cp -i'
@@ -90,9 +80,3 @@ alias cpuinfo='lscpu'
 ## older system use /proc/cpuinfo ##
 ##alias cpuinfo='less /proc/cpuinfo' ##
  
-## get GPU ram on desktop / laptop## 
-alias gpumeminfo='grep -i --color memory /var/log/Xorg.0.log'
-
-
-. /Users/SethPark/torch/install/bin/torch-activate
-

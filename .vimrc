@@ -1,43 +1,12 @@
-set nocompatible              " be iMproved, required
-filetype off                  " required
-
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-" alternatively, pass a path where Vundle should install plugins
-"call vundle#begin('~/some/path/here')
-
-" let Vundle manage Vundle, required
-Plugin 'VundleVim/Vundle.vim'
-
-Plugin 'Valloric/YouCompleteMe'
-
-Plugin 'tomtom/tcomment_vim'
-
-Plugin 'dyng/ctrlsf.vim'
-
-Plugin 'rking/ag.vim'
-
-Plugin 'bling/vim-airline'
-" All of your Plugins must be added before the following line
-call vundle#end()            " required
-filetype plugin indent on    " required
-" To ignore plugin indent changes, instead use:
-"filetype plugin on
-"
-" Brief help
-" :PluginList       - lists configured plugins
-" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
-" :PluginSearch foo - searches for foo; append `!` to refresh local cache
-" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
-"
-" see :h vundle for more details or wiki for FAQ
-" Put your non-Plugin stuff after this line
-
 syntax enable
 "color codeschool
-color molokai
-let g:molokai_original = 1
+"set guicolors
+set background=dark
+set t_Co=256
+colorscheme wombat256mod
+"colorscheme boa
+"color molokai
+"let g:molokai_original = 1
 set guifont=Monaco:h12
 let g:NERDTreeWinPos = "right"
 set guioptions-=T " Removes top toolbar
@@ -60,43 +29,47 @@ set expandtab
 set noswapfile
 set showcmd
 set cursorline
+hi CursorLine   cterm=NONE ctermbg=8 ctermfg=NONE
 set wildmenu
 set lazyredraw
 
-" Always show current position
+if exists('+colorcolumn')
+    set colorcolumn=80
+else
+    au BufWinEnter * let w:m2=matchadd('ErrorMsg', '\%>80v.\+', -1)
+endif
+
+"" Always show current position
 set ruler
 
 " Ignore case when searching
 set ignorecase
 
-" When searching try to be smart about cases
+"" When searching try to be smart about cases
 set smartcase
 
-" Highlight search results
+" " Highlight search results
 set hlsearch
-
-" Makes search act like search in modern browsers
+"
+" " Makes search act like search in modern browsers
 set incsearch
-
-" For regular expressions turn magic on
+"
+" " For regular expressions turn magic on
 set magic
-
-" Show matching bracketes when text indicator is over them
+"
+" " Show matching bracketes when text indicator is over them
 set showmatch
-
-" No annoying sound on errors
+"
+" " No annoying sound on errors
 set noerrorbells
 set novisualbell
 set t_vb=
 set tm=500
-
-" Always show the status line
+"
+" " Always show the status line
 set laststatus=2
-
-" Format the status line
-"set statusline=\ %{HasPaste()}%F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ \ \ Line:\ %l
-
-" returns true if paste mode is enabled
+"
+" " returns true if paste mode is enabled
 function! HasPaste()
     if &paste
         return 'PASTE MODE  '
@@ -104,10 +77,7 @@ function! HasPaste()
     return ''
 endfunction
 
-"copy to the osx clipboard
-vmap <C-x> :!pbcopy<CR>
-vmap <C-c> :w !pbcopy<CR><CR>
-
-
-
-
+  "copy to the osx clipboard
+  vmap <C-x> :!pbcopy<CR>
+  vmap <C-c> :w !pbcopy<CR><CR>
+"
